@@ -9,8 +9,14 @@
 
 </head>
 <body>
-    {% include ':default:head.html.twig'%}
-{% block body %}{% endblock %}
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+        {% include ':default:head.html.twig'%}
+        {% include ':default:aside.html.twig'%}
+        {% include ':default:contentwrap.html.twig'%}
+
+
+    {% block body %}{% endblock %}
 {% block javascripts %}{% endblock %}
 </body>
 </html>
