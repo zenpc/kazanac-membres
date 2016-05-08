@@ -1,0 +1,8 @@
+kazanac_membre:
+    resource: "@KazanacMembreBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation

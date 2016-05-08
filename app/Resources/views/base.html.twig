@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Ma page d'acceuil{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    {% include ':default:import_css.html.twig'%}
+
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+
+        {% include ':default:head.html.twig'%}
+        {% include ':default:aside.html.twig'%}
+
+    {% block body %}{% endblock %}
+
+    {% include ':default:footer.html.twig'%}
+    {% include ':default:csidebar.html.twig'%}
+
+{% block javascripts %}{% include ':default:js.html.twig'%}{% endblock %}
+</body>
+</html>
