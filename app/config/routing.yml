@@ -1,8 +1,16 @@
-kazanac_membre:
-    resource: "@KazanacMembreBundle/Controller/"
+kazanac_site:
+    resource: "@KazanacSiteBundle/Controller/"
     type:     annotation
     prefix:   /
 
-app:
-    resource: "@AppBundle/Controller/"
+
+
+kazanac_membre:
+    resource: "@KazanacMembreBundle/Controller/"
     type:     annotation
+    prefix:   /admin
+
+#Route fosuserBundle
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

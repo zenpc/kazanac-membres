@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Administration{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    {% include 'KazanacMembreBundle:fragment:import_css.html.twig'%}
+
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+
+        {% include 'KazanacMembreBundle:fragment:head.html.twig'%}
+        {% include 'KazanacMembreBundle:fragment:aside.html.twig'%}
+
+    {% block body %}{% endblock %}
+
+    {% include 'KazanacMembreBundle:fragment:footer.html.twig'%}
+    {% include 'KazanacMembreBundle:fragment:csidebar.html.twig'%}
+
+{% block javascripts %}{% include 'KazanacMembreBundle:fragment:js.html.twig'%}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,4 @@
+services:
+#    kazanac_site.example:
+#        class: Kazanac\SiteBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]
