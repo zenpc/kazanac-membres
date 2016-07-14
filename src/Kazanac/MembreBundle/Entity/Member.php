@@ -6,12 +6,12 @@ use Doctrine\ORM\Mapping as ORM;
 
 
 /**
- * Membre
+ * Member
  *
- * @ORM\Table(name="Membre")
- *
+ * @ORM\Table(name="member")
+ * @ORM\Entity()
  */
-class Membre
+class Member
 {
 
     /**
@@ -26,23 +26,23 @@ class Membre
     /**
      *
      * @var String
-     * @ORM\Column(name="nom",type="string",length=50,nullable=true)
+     * @ORM\Column(name="last_name",type="string",length=50,nullable=true)
      *
      */
-    protected $nom;
+    protected $lastName;
 
     /**
      *
      * @var String
-     * @ORM\Column(name="prenom",type="string",length=80,nullable=true)
+     * @ORM\Column(name="first_name",type="string",length=80,nullable=true)
      *
      */
-    protected $prenom;
+    protected $firstName;
 
     /**
      *
      *
-     * @ORM\ManyToOne(targetEntity="Kazanac\MembreBundle\Entity\Telephone")
+     * @ORM\ManyToOne(targetEntity="Kazanac\MembreBundle\Entity\Phone")
      * @ORM\JoinColumn(name="telephone_id", referencedColumnName="id", nullable=true)
      */
     protected $phonenumber;
@@ -50,7 +50,7 @@ class Membre
     /**
      *
      *
-     * @ORM\ManyToOne(targetEntity="Kazanac\MembreBundle\Entity\Adress")
+     * @ORM\ManyToOne(targetEntity="Kazanac\MembreBundle\Entity\Address")
      * @ORM\JoinColumn(name="addres_id", referencedColumnName="id", nullable=true)
      */
     protected $address;
@@ -59,14 +59,14 @@ class Membre
      *
      *
      * @ORM\ManyToOne(targetEntity="Kazanac\MembreBundle\Entity\Email")
-     * @ORM\JoinColumn(name="email", referencedColumnName="id", nullable=true)
+     * @ORM\JoinColumn(name="email_id", referencedColumnName="id", nullable=true)
      */
     protected $email;
 
     /**
      *
      *
-     * @ORM\ManyToOne(targetEntity="Kazanac\MembreBundle\Entity\Fonction")
+     * @ORM\ManyToOne(targetEntity="Kazanac\MembreBundle\Entity\FunctionMember")
      * @ORM\JoinColumn(name="fonction_id", referencedColumnName="id", nullable=true)
      */
     protected $fonction;
@@ -225,5 +225,77 @@ class Membre
     public function getFonction()
     {
         return $this->fonction;
+    }
+
+    /**
+     * Set lastName
+     *
+     * @param string $lastName
+     *
+     * @return Member
+     */
+    public function setLastName($lastName)
+    {
+        $this->lastName = $lastName;
+
+        return $this;
+    }
+
+    /**
+     * Get lastName
+     *
+     * @return string
+     */
+    public function getLastName()
+    {
+        return $this->lastName;
+    }
+
+    /**
+     * Set firstName
+     *
+     * @param string $firstName
+     *
+     * @return Member
+     */
+    public function setFirstName($firstName)
+    {
+        $this->firstName = $firstName;
+
+        return $this;
+    }
+
+    /**
+     * Get firstName
+     *
+     * @return string
+     */
+    public function getFirstName()
+    {
+        return $this->firstName;
+    }
+
+    /**
+     * Set address
+     *
+     * @param \Kazanac\MembreBundle\Entity\Address $address
+     *
+     * @return Member
+     */
+    public function setAddress(\Kazanac\MembreBundle\Entity\Address $address = null)
+    {
+        $this->address = $address;
+
+        return $this;
+    }
+
+    /**
+     * Get address
+     *
+     * @return \Kazanac\MembreBundle\Entity\Address
+     */
+    public function getAddress()
+    {
+        return $this->address;
     }
 }

@@ -5,12 +5,12 @@ namespace Kazanac\MembreBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Adress
+ * Telephone
  *
- * @ORM\Table(name="adress")
- * @ORM\Entity(repositoryClass="Kazanac\MembreBundle\Repository\AdressRepository")
+ * @ORM\Table(name="phone")
+ * @ORM\Entity(repositoryClass="Kazanac\MembreBundle\Repository\TelephoneRepository")
  */
-class Adress
+class Phone
 {
     /**
      * @var int
@@ -24,9 +24,9 @@ class Adress
     /**
      * @var string
      *
-     * @ORM\Column(name="adress", type="string", length=255)
+     * @ORM\Column(name="tel", type="string", length=255)
      */
-    private $adress;
+    private $tel;
 
 
     /**
@@ -40,26 +40,26 @@ class Adress
     }
 
     /**
-     * Set adress
+     * Set tel
      *
-     * @param string $adress
+     * @param string $tel
      *
-     * @return Adress
+     * @return Telephone
      */
-    public function setAdress($adress)
+    public function setTel($tel)
     {
-        $this->adress = $adress;
+        $this->tel = $tel;
 
         return $this;
     }
 
     /**
-     * Get adress
+     * Get tel
      *
      * @return string
      */
-    public function getAdress()
+    public function getTel()
     {
-        return $this->adress;
+        return $this->tel;
     }
 }

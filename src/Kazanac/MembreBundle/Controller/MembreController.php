@@ -15,8 +15,8 @@ class MembreController extends Controller
 
 
         $em = $this->getDoctrine()->getManager();
-        //$person = $em->getRepository('KazanacMembre:Membre')->findAll();
-        $person="je suis ";
-        return $this->render('KazanacMembreBundle:Membre:list_membre.html.twig',array("Membre"=>$person));
+        $member = $em->getRepository('KazanacMembreBundle:Member')->findAll();
+
+        return $this->render('KazanacMembreBundle:Member:list_membre.html.twig',array("members"=>$member));
     }
 }

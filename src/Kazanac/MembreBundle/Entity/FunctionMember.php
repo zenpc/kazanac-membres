@@ -5,12 +5,12 @@ namespace Kazanac\MembreBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Telephone
+ * Fonction
  *
- * @ORM\Table(name="telephone")
- * @ORM\Entity(repositoryClass="Kazanac\MembreBundle\Repository\TelephoneRepository")
+ * @ORM\Table(name="function")
+ * @ORM\Entity(repositoryClass="Kazanac\MembreBundle\Repository\FonctionRepository")
  */
-class Telephone
+class FunctionMember
 {
     /**
      * @var int
@@ -24,15 +24,16 @@ class Telephone
     /**
      * @var string
      *
-     * @ORM\Column(name="tel", type="string", length=255)
+     * @ORM\Column(name="function", type="string", length=255)
      */
-    private $tel;
+    private $function;
+
 
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -40,26 +41,26 @@ class Telephone
     }
 
     /**
-     * Set tel
+     * Set function
      *
-     * @param string $tel
+     * @param string $function
      *
-     * @return Telephone
+     * @return FunctionMember
      */
-    public function setTel($tel)
+    public function setFunction($function)
     {
-        $this->tel = $tel;
+        $this->function = $function;
 
         return $this;
     }
 
     /**
-     * Get tel
+     * Get function
      *
      * @return string
      */
-    public function getTel()
+    public function getFunction()
     {
-        return $this->tel;
+        return $this->function;
     }
 }
