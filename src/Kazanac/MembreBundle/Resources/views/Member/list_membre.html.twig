@@ -4,7 +4,9 @@ liste members
 {{ members |length }}
 {% for member in members  %}
    <p>{{ member.firstname }} {{  member.lastname }}</p>
+    <p>{{ member.phonenumber.tel }} </p>
 
+    <p>{{ member.email.email }} </p>
 {% endfor %}
 
 </html>
