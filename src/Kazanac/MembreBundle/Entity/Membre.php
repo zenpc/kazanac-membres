@@ -6,9 +6,9 @@ use Doctrine\ORM\Mapping as ORM;
 
 
 /**
- * User
+ * Membre
  *
- * @ORM\Table(name="membre")
+ * @ORM\Table(name="Membre")
  *
  */
 class Membre

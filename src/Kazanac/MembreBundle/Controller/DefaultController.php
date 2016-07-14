@@ -8,15 +8,14 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/listMembre",name="listMembre")
+     * @Route("/",)
      */
     public function indexAction()
     {
 
 
-        $em = $this->getDoctrine()->getManager();
-        //$person = $em->getRepository('KazanacMembre:Membre')->findAll();
-$person="je suis ";
-        return $this->render('KazanacMembreBundle:Default:list_membre.html.twig',array("membre"=>$person));
+        return $this->render('KazanacMembreBundle:Default:index.html.twig');
     }
+
+
 }
