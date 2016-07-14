@@ -12,6 +12,11 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('KazanacMembreBundle:Default:index.html.twig');
+
+
+        $em = $this->getDoctrine()->getManager();
+        //$person = $em->getRepository('KazanacMembre:Membre')->findAll();
+$person="je suis ";
+        return $this->render('KazanacMembreBundle:Default:index.html.twig',array("membre"=>$person));
     }
 }
