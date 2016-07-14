@@ -3,7 +3,7 @@
 namespace Kazanac\MembreBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use FOS\UserBundle\Model\User as BaseUser;
+
 
 /**
  * User
@@ -11,7 +11,8 @@ use FOS\UserBundle\Model\User as BaseUser;
  * @ORM\Table(name="user")
  * @ORM\Entity(repositoryClass="Kazanac\MembreBundle\Repository\UserRepository")
  */
-class User extends BaseUser {
+class User
+{
 
     /**
      * @var int
@@ -26,81 +27,203 @@ class User extends BaseUser {
      *
      * @var String
      * @ORM\Column(name="nom",type="string",length=50,nullable=true)
-     *  
+     *
      */
     protected $nom;
 
     /**
      *
      * @var String
-     * @ORM\Column(name="prennom",type="string",length=80,nullable=true)
-     *  
+     * @ORM\Column(name="prenom",type="string",length=80,nullable=true)
+     *
      */
     protected $prenom;
 
     /**
      *
-     * @var int
-     * @ORM\Column(name="numphone",type="integer",length=10,nullable=true)
-     *  
+     *
+     * @ORM\ManyToOne(targetEntity="Kazanac\MembreBundle\Entity\Telephone")
+     * @ORM\JoinColumn(name="telephone_id", referencedColumnName="id", nullable=true)
      */
     protected $phonenumber;
 
     /**
      *
-     * @var String
-     * @ORM\Column(name="commune",type="string",length=100,nullable=true)
-     *  
+     *
+     * @ORM\ManyToOne(targetEntity="Kazanac\MembreBundle\Entity\Adress")
+     * @ORM\JoinColumn(name="addres_id", referencedColumnName="id", nullable=true)
      */
-    protected $commune;
+    protected $address;
 
- 
+    /**
+     *
+     *
+     * @ORM\ManyToOne(targetEntity="Kazanac\MembreBundle\Entity\Email")
+     * @ORM\JoinColumn(name="email", referencedColumnName="id", nullable=true)
+     */
+    protected $email;
+
+    /**
+     *
+     *
+     * @ORM\ManyToOne(targetEntity="Kazanac\MembreBundle\Entity\Fonction")
+     * @ORM\JoinColumn(name="fonction_id", referencedColumnName="id", nullable=true)
+     */
+    protected $fonction;
+
+
+
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
-    public function getId() {
+    public function getId()
+    {
         return $this->id;
     }
 
-    public function __construct() {
-        parent::__construct();
+    /**
+     * Set nom
+     *
+     * @param string $nom
+     *
+     * @return User
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+
+        return $this;
     }
 
-    function getNom() {
+    /**
+     * Get nom
+     *
+     * @return string
+     */
+    public function getNom()
+    {
         return $this->nom;
     }
 
-    function getPrenom() {
+    /**
+     * Set prenom
+     *
+     * @param string $prenom
+     *
+     * @return User
+     */
+    public function setPrenom($prenom)
+    {
+        $this->prenom = $prenom;
+
+        return $this;
+    }
+
+    /**
+     * Get prenom
+     *
+     * @return string
+     */
+    public function getPrenom()
+    {
         return $this->prenom;
     }
 
-    function getPhonenumber() {
+    /**
+     * Set phonenumber
+     *
+     * @param \Kazanac\MembreBundle\Entity\Telephone $phonenumber
+     *
+     * @return User
+     */
+    public function setPhonenumber(\Kazanac\MembreBundle\Entity\Telephone $phonenumber = null)
+    {
+        $this->phonenumber = $phonenumber;
+
+        return $this;
+    }
+
+    /**
+     * Get phonenumber
+     *
+     * @return \Kazanac\MembreBundle\Entity\Telephone
+     */
+    public function getPhonenumber()
+    {
         return $this->phonenumber;
     }
 
-    function getCommune() {
-        return $this->commune;
+    /**
+     * Set adress
+     *
+     * @param \Kazanac\MembreBundle\Entity\Adress $adress
+     *
+     * @return User
+     */
+    public function setAdress(\Kazanac\MembreBundle\Entity\Adress $adress = null)
+    {
+        $this->adress = $adress;
+
+        return $this;
     }
 
-
-    function setNom(String $nom) {
-        $this->nom = $nom;
+    /**
+     * Get adress
+     *
+     * @return \Kazanac\MembreBundle\Entity\Adress
+     */
+    public function getAdress()
+    {
+        return $this->adress;
     }
 
-    function setPrenom(String $prenom) {
-        $this->prenom = $prenom;
+    /**
+     * Set email
+     *
+     * @param \Kazanac\MembreBundle\Entity\Email $email
+     *
+     * @return User
+     */
+    public function setEmail(\Kazanac\MembreBundle\Entity\Email $email = null)
+    {
+        $this->email = $email;
+
+        return $this;
     }
 
-    function setPhonenumber($phonenumber) {
-        $this->phonenumber = $phonenumber;
+    /**
+     * Get email
+     *
+     * @return \Kazanac\MembreBundle\Entity\Email
+     */
+    public function getEmail()
+    {
+        return $this->email;
     }
 
-    function setCommune(String $commune) {
-        $this->commune = $commune;
+    /**
+     * Set fonction
+     *
+     * @param \Kazanac\MembreBundle\Entity\Fonction $fonction
+     *
+     * @return User
+     */
+    public function setFonction(\Kazanac\MembreBundle\Entity\Fonction $fonction = null)
+    {
+        $this->fonction = $fonction;
+
+        return $this;
     }
 
-
-
+    /**
+     * Get fonction
+     *
+     * @return \Kazanac\MembreBundle\Entity\Fonction
+     */
+    public function getFonction()
+    {
+        return $this->fonction;
+    }
 }
