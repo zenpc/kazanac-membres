@@ -1,0 +1,40 @@
+.cover img{
+    width: 100%;
+}
+
+.front{
+       margin-bottom: 17px;
+       
+    box-shadow: 0px 6px 21px 1px lightgrey;
+}
+
+.user img{
+    width: 45%;
+    margin-left: 28%;
+}
+
+p.nameMember {
+    text-align: center;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 17px;
+}
+.coordonnee {
+    padding-bottom: 4px;
+}
+
+ .hrCoordonnee{
+
+     margin-top:12px !important;
+     margin-bottom: 0px !important;
+ }
+
+.coordonnee p.nameMember {
+    margin: 6px !important;
+}
+
+p{
+    margin: 10px !important;
+}
+p i.fa.fa-envelope, p i.fa.fa-phone{
+    padding-right: 15px;
+}
