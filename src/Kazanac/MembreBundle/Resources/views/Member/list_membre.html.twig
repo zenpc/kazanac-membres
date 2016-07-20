@@ -74,14 +74,21 @@
                                     <img class="img-responsive"  src="{{ asset('bundles/kazanacmembre/img/cover.jpg') }}">                                                  
                                 </div>
                                 <div class="user">
-                                    <img class="img-responsive img-circle" src="{{ asset('bundles/kazanacmembre/img/inconnu.jpg') }}">  
+                                    {% if member.pathImg is null %}
+                                    <img class="img-responsive img-circle" src="{{ asset('bundles/kazanacmembre/img/inconnu.jpg') }}">
+                                    {% else %}
+                                        <img class="img-responsive img-circle" src="{{ member.pathImg }}">
+
+                                    {% endif %}
                                 </div>           
                                 <div class="coordonnee">
                                         <hr class="hrCoordonnee">
                                         <p class="nameMember"> {{ member.firstname }} {{  member.lastname }}</p>
-                                        <hr  class="hrCoordonnee">                
-                                        <p> <i class="fa fa-phone" aria-hidden="true"></i>{{ member.phonenumber.tel }}</p>
-                                        <p> <i class="fa fa-envelope" aria-hidden="true"></i>{{ member.email.email }}</p>  
+                                        <hr  class="hrCoordonnee">
+                                    {% for phone in member.phone %}
+                                      <p> <i class="fa fa-phone" aria-hidden="true"></i>{{ phone.tel }}</p>
+                                    {% endfor %}
+                                        <p> <i class="fa fa-envelope" aria-hidden="true"></i>{{ member.email}}</p>
                                 </div>
                             </div>
                         </div>

@@ -28,6 +28,13 @@ class Phone
      */
     private $tel;
 
+    /**
+     *
+     *
+     * @ORM\ManyToOne(targetEntity="Kazanac\MembreBundle\Entity\Member",inversedBy="phone")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id", nullable=true)
+     */
+    protected $phonenumber;
 
     /**
      * Get id
@@ -61,5 +68,29 @@ class Phone
     public function getTel()
     {
         return $this->tel;
+    }
+
+    /**
+     * Set phonenumber
+     *
+     * @param \Kazanac\MembreBundle\Entity\Member $phonenumber
+     *
+     * @return Phone
+     */
+    public function setPhonenumber(\Kazanac\MembreBundle\Entity\Member $phonenumber = null)
+    {
+        $this->phonenumber = $phonenumber;
+
+        return $this;
+    }
+
+    /**
+     * Get phonenumber
+     *
+     * @return \Kazanac\MembreBundle\Entity\Member
+     */
+    public function getPhonenumber()
+    {
+        return $this->phonenumber;
     }
 }

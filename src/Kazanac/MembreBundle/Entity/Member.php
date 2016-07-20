@@ -39,27 +39,12 @@ class Member
      */
     protected $firstName;
 
-    /**
-     *
-     *
-     * @ORM\ManyToOne(targetEntity="Kazanac\MembreBundle\Entity\Phone")
-     * @ORM\JoinColumn(name="telephone_id", referencedColumnName="id", nullable=true)
-     */
-    protected $phonenumber;
+
+
 
     /**
-     *
-     *
-     * @ORM\ManyToOne(targetEntity="Kazanac\MembreBundle\Entity\Address")
-     * @ORM\JoinColumn(name="addres_id", referencedColumnName="id", nullable=true)
-     */
-    protected $address;
-
-    /**
-     *
-     *
-     * @ORM\ManyToOne(targetEntity="Kazanac\MembreBundle\Entity\Email")
-     * @ORM\JoinColumn(name="email_id", referencedColumnName="id", nullable=true)
+     * @var String
+     * @ORM\Column(name="email",type="string",length=50,nullable=true)
      */
     protected $email;
 
@@ -72,6 +57,17 @@ class Member
     protected $fonction;
 
 
+    /**
+     * @var String
+     * @ORM\Column(name="pathImg",type="string",length=200,nullable=true)
+     */
+    protected $pathImg;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Kazanac\MembreBundle\Entity\Phone", mappedBy="phonenumber")
+     *
+     */
+    private $phone;
 
     /**
      * Get id
@@ -297,5 +293,70 @@ class Member
     public function getAddress()
     {
         return $this->address;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->phone = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Set pathImg
+     *
+     * @param string $pathImg
+     *
+     * @return Member
+     */
+    public function setPathImg($pathImg)
+    {
+        $this->pathImg = $pathImg;
+
+        return $this;
+    }
+
+    /**
+     * Get pathImg
+     *
+     * @return string
+     */
+    public function getPathImg()
+    {
+        return $this->pathImg;
+    }
+
+    /**
+     * Add phone
+     *
+     * @param \Kazanac\MembreBundle\Entity\Phone $phone
+     *
+     * @return Member
+     */
+    public function addPhone(\Kazanac\MembreBundle\Entity\Phone $phone)
+    {
+        $this->phone[] = $phone;
+
+        return $this;
+    }
+
+    /**
+     * Remove phone
+     *
+     * @param \Kazanac\MembreBundle\Entity\Phone $phone
+     */
+    public function removePhone(\Kazanac\MembreBundle\Entity\Phone $phone)
+    {
+        $this->phone->removeElement($phone);
+    }
+
+    /**
+     * Get phone
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPhone()
+    {
+        return $this->phone;
     }
 }
