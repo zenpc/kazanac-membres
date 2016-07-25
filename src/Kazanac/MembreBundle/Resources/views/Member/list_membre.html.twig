@@ -2,7 +2,8 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Administration{% endblock %}</title>
+        <title>
+        {% block title %}Membres Kazanac{% endblock %}</title>
         {% block stylesheets %}
             
             <!-- Bootstrap 3.3.5 -->
@@ -14,13 +15,24 @@
             <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
             <link rel="stylesheet" href="{{ asset('bundles/kazanacmembre/css/CardMembers.css') }}" type="text/css" />
             <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+            {% include 'KazanacMembreBundle:fragment:import_css.html.twig'%}
         {% endblock %}
     </head>
 
     <body class="hold-transition skin-blue sidebar-mini">
         <div class="wrapper">
 
-        {% block body %}
+
+
+
+
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+
+        {% include 'KazanacMembreBundle:fragment:head.html.twig'%}
+        {% include 'KazanacMembreBundle:fragment:aside.html.twig'%}
+
+    {% block body %}
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -104,12 +116,11 @@
             <p class="text-right">Web Master : JEAN-LOUIS Stévie / BEBEL Jean-Raynal </p>            
         </div>
     </footer>
-        {% endblock body %}
+        {% endblock %}
 
+    {% include 'KazanacMembreBundle:fragment:footer.html.twig'%}
+    {% include 'KazanacMembreBundle:fragment:csidebar.html.twig'%}
 
-        {% block javascripts %}
-            {% include 'KazanacMembreBundle:fragment:js.html.twig' %}
-        {% endblock javascripts %}
-    </body>
-
+{% block javascripts %}{% include 'KazanacMembreBundle:fragment:js.html.twig'%}{% endblock %}
+</body>
 </html>
