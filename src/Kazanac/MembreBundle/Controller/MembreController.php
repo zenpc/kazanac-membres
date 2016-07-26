@@ -8,11 +8,10 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class MembreController extends Controller
 {
     /**
-     * @Route("/listMembre",name="trombinoscope")
+     * @Route("/trombinoscope",name="trombinoscope")
      */
     public function indexAction()
     {
-
 
         $em = $this->getDoctrine()->getManager();
         $member = $em->getRepository('KazanacMembreBundle:Member')->findAll();
