@@ -45,31 +45,17 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-                <a class="navbar-brand" href="#">Project name</a>
+                <a class="navbar-brand" href="#">Les membres</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#" onclick="auth();">Voir les Membres</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li class="dropdown-header">Nav header</li>
-                            <li><a href="#">Separated link</a></li>
-                            <li><a href="#">One more separated link</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="./">Default <span class="sr-only">(current)</span></a></li>
-                    <li><a href="../navbar-static-top/">Static top</a></li>
-                    <li><a href="../navbar-fixed-top/">Fixed top</a></li>
-                </ul>
+                    <li><a href="{{ path('listMembre') }}" onclick="auth();">Trombinoscope</a></li>
+                    <li><a href="index2.html"><i class="fa fa-circle-o"></i> Rechercher un membre</a></li>
+                    <li><a href="index2.html"><i class="fa fa-circle-o"></i> Créer un membres</a></li>
+                    <li><a href="index2.html"><i class="fa fa-circle-o"></i> Ajouter un membre</a></li>
+                    <li><a href="index2.html"><i class="fa fa-circle-o"></i> Modifier un membres</a></li>
+                    <li><a href="index2.html"><i class="fa fa-circle-o"></i> Supprimer un membre</a></li>
+                </ul>                
             </div>
             <!--/.nav-collapse -->
         </div>
@@ -107,22 +93,14 @@
                         
                     {% endfor %}
                 </div>
-            </div>  
-
-
-  <footer>
-        <div class="jumbotron">            
-            <p class="text-center">&copy; Association KAZANAC </p>
-            <p class="text-right">Web Master : JEAN-LOUIS Stévie / BEBEL Jean-Raynal </p>            
-        </div>
-    </footer>
-    </section>
+            </div>               
+            </section>
    
         {% endblock %}
 
-    {% include 'KazanacMembreBundle:fragment:footer.html.twig'%}
-    {% include 'KazanacMembreBundle:fragment:csidebar.html.twig'%}
+        {% include 'KazanacMembreBundle:fragment:footer.html.twig'%}
+        {% include 'KazanacMembreBundle:fragment:csidebar.html.twig'%}
 
-{% block javascripts %}{% include 'KazanacMembreBundle:fragment:js.html.twig'%}{% endblock %}
-</body>
+        {% block javascripts %}{% include 'KazanacMembreBundle:fragment:js.html.twig'%}{% endblock %}
+    </body>
 </html>
