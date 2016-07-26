@@ -305,6 +305,7 @@ a:focus {
 }
 .main-header .logo .logo-mini {
   display: none;
+  margin-top:10px;
 }
 .main-header .navbar-brand {
   color: #fff;
