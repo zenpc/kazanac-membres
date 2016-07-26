@@ -8,7 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class MembreController extends Controller
 {
     /**
-     * @Route("/listMembre",name="listMembre")
+     * @Route("/listMembre",name="trombinoscope")
      */
     public function indexAction()
     {
