@@ -46,7 +46,6 @@
 
 # Backup entities generated with doctrine:generate:entities command
 */Entity/*~
-
-#vcode
-/.vscode
-/.vscode/*
+/.idea/
+/.gitignore
+/app/check.php

@@ -1,6 +1,7 @@
-{% extends "KazanacMembreBundle::layout.html.twig" %}
+{% extends 'KazanacMembreBundle::layout.html.twig' %}
 
 {% block body %}
+
     {% if error %}
         <div>{{ error|trans({}, 'FOSUserBundle') }}</div>
     {% endif %}

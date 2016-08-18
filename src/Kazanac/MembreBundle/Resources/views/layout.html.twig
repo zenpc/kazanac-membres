@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Administration{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    {% include 'KazanacMembreBundle:fragment:import_css.html.twig'%}
+
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+
+    {% block body %}
+
+
+
+
+
+    {% endblock %}
+
+
+
+</body>
+</html>
