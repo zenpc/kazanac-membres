@@ -10,10 +10,10 @@
       </div>
       <div class="col-md-6" style="margin-top: 13%;" >             
     
-    <form class="form-horizontal" action="/kazanac/web/app.php/login_check" method="post">
+    <form class="form-horizontal" action="{{ path("fos_user_security_check") }}" method="post">
 
         <div class="form-group">
-                    <input type="hidden" name="_csrf_token" value="MMZtvgXMbz1kXsJfYF50YeclK0xaOcSKffc3dp_oKg0">
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}">
 
             <label class="col-sm-4  control-label" for="username">Nom d'utilisateur</label>
             <div class="col-sm-6">
@@ -47,43 +47,42 @@
   </div>
 </div>
 
-
- <!--img class="img-responsive"  src="{{ asset('bundles/kazanacmembre/img/logo_Kazanac_2016.png') }}">    
     {% if error %}
-        <div>{{ error|trans({}, 'FOSUserBundle') }}</div>
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
+ {#<!--img class="img-responsive"  src="{{ asset('bundles/kazanacmembre/img/logo_Kazanac_2016.png') }}">    #}
 
-    <form class="form-horizontal" action="{{ path("fos_user_security_check") }}" method="post">
+    {#<form class="form-horizontal" action="{{ path("fos_user_security_check") }}" method="post">#}
 
-        <div class="form-group">
-                    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+        {#<div class="form-group">#}
+                    {#<input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />#}
 
-            <label class="col-sm-4  control-label" for="username">{{ 'Nom d\'utilisateur'|trans({}, 'FOSUserBundle') }}</label>
-            <div class="col-sm-6">
-                <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
-            </div>
-        </div>
+            {#<label class="col-sm-4  control-label" for="username">{{ 'Nom d\'utilisateur'|trans({}, 'FOSUserBundle') }}</label>#}
+            {#<div class="col-sm-6">#}
+                {#<input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />#}
+            {#</div>#}
+        {#</div>#}
 
-        <div class="form-group">
-            <label class="col-sm-4 control-label" for="password">{{ 'Mot de passe'|trans({}, 'FOSUserBundle') }}</label>
-            <div class="col-sm-6">
-                <input type="password" id="password" name="_password" required="required" />
-            </div>
-        </div>
+        {#<div class="form-group">#}
+            {#<label class="col-sm-4 control-label" for="password">{{ 'Mot de passe'|trans({}, 'FOSUserBundle') }}</label>#}
+            {#<div class="col-sm-6">#}
+                {#<input type="password" id="password" name="_password" required="required" />#}
+            {#</div>#}
+        {#</div>#}
 
-        <div class="form-group">
-            <div class="col-sm-offset-4 col-sm-10">
-                <div class="checkbox">
-                    <label for="remember_me">    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
-                        {{ 'Se souvenir de moi'|trans({}, 'FOSUserBundle') }}</label>
-                </div>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-sm-offset-4 col-sm-10">
-                <input type="submit" class="btn bg-primary" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
-            </div>
-        </div>
-    </form==>
+        {#<div class="form-group">#}
+            {#<div class="col-sm-offset-4 col-sm-10">#}
+                {#<div class="checkbox">#}
+                    {#<label for="remember_me">    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />#}
+                        {#{{ 'Se souvenir de moi'|trans({}, 'FOSUserBundle') }}</label>#}
+                {#</div>#}
+            {#</div>#}
+        {#</div>#}
+        {#<div class="form-group">#}
+            {#<div class="col-sm-offset-4 col-sm-10">#}
+                {#<input type="submit" class="btn bg-primary" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />#}
+            {#</div>#}
+        {#</div>#}
+    {#</form==>#}
 
 {% endblock body %}
